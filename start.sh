@@ -10,14 +10,14 @@ pip install -U pip
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/pyKinsu/Tele-Filter-Bot /Tele-Filter-Bot
+  git clone https://github.com/henockjoy/Yoonv2 /Yoonv2
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /Tele-Filter-Bot
+  git clone $UPSTREAM_REPO /Yoonv2
 fi
 
 # Upgrade pip and install requirements
-cd /Tele-Filter-Bot
+cd /Yoon2
 pip install -U -r requirements.txt --force-reinstall
 
 # Start bot
