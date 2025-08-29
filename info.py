@@ -28,11 +28,11 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 PICS = environ.get(
     'PICS',
-    'https://envs.sh/R3g.jpg https://envs.sh/R3H.jpg https://envs.sh/R3N.jpg https://envs.sh/R3v.jpg https://envs.sh/R39.jpg'
+    'https://telegra.ph/file/5fe8fe2657a254ace9ea1.jpg https://telegra.ph/file/c28b06c75b9f3a861871c.jpg https://telegra.ph/file/102bc6bfbfc1f39cc33ad.jpg https://telegra.ph/file/8e8ebbcbb1d0887707045.jpg https://telegra.ph/file/571c674cdb2d72b347de6.jpg https://telegra.ph/file/d1403ac4b4bfa23c86b5d.jpg https://telegra.ph/file/3cb1aada3e7c93a543d3e.jpg https://telegra.ph/file/8b44b463a19d16e45e6bf.jpg https://telegra.ph/file/bf0f6fd573cc757e4a12b.jpg https://telegra.ph/file/3d0d446918acd46b0609a.jpg https://telegra.ph/file/9d5cd3d5d0b9d9f65b6c0.jpg https://telegra.ph/file/3eae381cedb25cff38b72.jpg'
 ).split()
 
-NOR_IMG = environ.get("NOR_IMG", "https://envs.sh/R3g.jpg")
-MELCOW_VID = environ.get("MELCOW_VID", "https://envs.sh/R3g.jpg")
+NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/46443096bc6895c74a716.jpg")
+MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/d842ded1b51a4aa960d98.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/7b0ba2952ec098bb46997.jpg")
 VRFIED_IMG = environ.get("VRFIED_IMG", "https://envs.sh/R3g.jpg")
 VRFY_IMG = environ.get("VRFY_IMG", "https://envs.sh/R3N.jpg")
@@ -40,7 +40,7 @@ VRFY_IMG = environ.get("VRFY_IMG", "https://envs.sh/R3N.jpg")
 
 # ─── Admins / Users / Channels ──────────────────────────
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '0').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
@@ -50,17 +50,17 @@ auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002317832654')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002505094282')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001771340892')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001863319697')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
-NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
+NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True))
 
 
 # ─── MongoDB ─────────────────────────────────────────────
 DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telefilter')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'yoonbot')
 
 
 # ─── Shortlink & Other Settings ─────────────────────────
@@ -74,37 +74,37 @@ MAX_B_TN = environ.get("MAX_B_TN", "10")
 MAX_BTN = is_enabled(environ.get('MAX_BTN', "True"), True)
 PORT = environ.get("PORT", "8080")
 
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/ur_movie_group')
-SPRT_CHNL = environ.get('SPRT_CHNL', 'https://t.me/kissuxbots')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/kissuxbots')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/bot_making_tips')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/FT_Chatz')
+SPRT_CHNL = environ.get('SPRT_CHNL', 'https://t.me/FT_Channels')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/FT_Channels')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/FT_Channels')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', False))
-HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/kissuxbots')
-MSG_ALRT = environ.get('MSG_ALRT', 'ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : 𓆩•𝐊𝐢𝐬𝐬𝐮💞•𓆪')
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/FT_Channels')
+MSG_ALRT = environ.get('MSG_ALRT', 'ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : ғɪʟᴍᴏᴛᴀɪɴᴍᴇɴᴛ.💥')
 
 
 # ─── Display Configurations ─────────────────────────────
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ""))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'kissuhelp')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', "-1001725399753"))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamYoonseri')
 
 P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "True"), True)
 IMDB = is_enabled(environ.get('IMDB', "True"), False)
 AUTO_FFILTER = is_enabled(environ.get('AUTO_FFILTER', "True"), True)
-AUTO_DELETE = is_enabled(environ.get('AUTO_DELETE', "True"), True)
+AUTO_DELETE = is_enabled(environ.get('AUTO_DELETE', "False"), False)
 SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
 
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 
-REQ_GRP = environ.get('REQ_GRP', 'https://t.me/ur_movie_group')
+REQ_GRP = environ.get('REQ_GRP', 'https://t.me/FT_Chatz')
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
-MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
+MAX_LIST_ELM = environ.get("MAX_LIST_ELM", 4)
 
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in environ.get('FILE_STORE_CHANNEL', '').split()]
-MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "False"), True)
+MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "True"), False)
 PROTECT_CONTENT = is_enabled(environ.get('PROTECT_CONTENT', "False"), False)
 PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "True"), True)
 
