@@ -1,11 +1,12 @@
 class script(object):
 
-    START_TXT = """<b>
-✨ 안녕하세요 {}, <a href="https://t.me/{}">{}</a>! ✨,<br><br>
-Your smart Assistant 🎬<br><br>
-🔎 Just send me a movie/series name & I’ll fetch it for you — fast & accurate ⚡<br><br>
+    START_TXT = """<b>✨ 안녕하세요 {}, <a href="https://t.me/{}">{}</a>! ✨,</b>
+
+Your smart Assistant 🎬
+🔎 Just send me a movie/series name & I’ll fetch it for you — fast & accurate ⚡<
 📌 Sit back & enjoy, I’ll handle the searching! 💫
-<blockquote>Mᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ <a href="https://t.me/FT_Channels">ғɪʟᴍᴏᴛᴀɪɴᴍᴇɴᴛ.💥</a></blockquote>
+
+Mᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ <a href="https://t.me/FT_Channels">ғɪʟᴍᴏᴛᴀɪɴᴍᴇɴᴛ.💥</a>
 </b>"""
 
     HELP_TXT = """<b>Hᴇʏ {}
