@@ -59,7 +59,7 @@ NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # ─── MongoDB ─────────────────────────────────────────────
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "unix")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'yoonbot')
 
 
