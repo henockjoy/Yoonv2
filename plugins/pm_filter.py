@@ -65,7 +65,7 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @ur_movie_group</b>")
+            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @FT_Chatz</b>")
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -117,7 +117,7 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/Sanya_movies_bot"),
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/yoonseri2bot"),
             InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
@@ -871,7 +871,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                     InlineKeyboardButton('↼ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ', url=REQ_GRP),
                                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⇀', url=SPRT_CHNL)
                                 ],[
-                                    InlineKeyboardButton(" ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ", url="t.me/kissuxbots")
+                                    InlineKeyboardButton(" ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ", url="t.me/FT_Channels")
                                 ]
                                 ]
                             )
@@ -1294,12 +1294,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             url=f"https://t.me/{temp.U_NAME}?startgroup=true")
     ],[
         InlineKeyboardButton("🔍 Search", url=REQ_GRP),
-        InlineKeyboardButton("📌 Updates", url="https://t.me/kissuxbots")
+        InlineKeyboardButton("📌 Updates", url="https://t.me/FT_Channels")
     ],[
         InlineKeyboardButton("💡 Help", callback_data="help"),
         InlineKeyboardButton("📰 About", callback_data="about")
     ],[
-        InlineKeyboardButton(" Make Your Own Bot", url="https://GitHub.com/pykinsu/tele-filter-bot/")
+        InlineKeyboardButton("🔔 OTT Updates", url="https://t.me/FT_Newz")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1377,7 +1377,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('ᴀɴʏ ǫᴜᴇʀʏ ✉️', url='t.me/kissuhelp')
+            InlineKeyboardButton('ᴀɴʏ ǫᴜᴇʀʏ ✉️', url='t.me/FT_Adminbot')
         ], [
             InlineKeyboardButton('∙ ᴄᴏɴɴᴇᴄᴛɪᴏɴ ∙', callback_data='coct'),
             InlineKeyboardButton('∙ ᴇxᴛʀᴀ ᴍᴏᴅs ∙', callback_data='extra')
@@ -1449,7 +1449,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "source":
         buttons = [[
            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about'),
-           InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', url='https://github.com/pykinsu/tele-filter-bot/')
+           InlineKeyboardButton('OTT Updates', url='https://t.me/FT_Newz')
            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1658,7 +1658,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "owner_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/kissuhelp")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/FTAdminbot")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -1679,7 +1679,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                     InlineKeyboardButton("↼ Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ ⇀", url=REQ_GRP)
                 ],[
-                    InlineKeyboardButton("↼ ʙᴏᴛ ᴄʜᴀɴɴᴇʟ ⇀", url="t.me/kissuxbots")
+                    InlineKeyboardButton("↼ ʙᴏᴛ ᴄʜᴀɴɴᴇʟ ⇀", url="t.me/FT_Channels")
                 ],[
                     InlineKeyboardButton("↼  Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ ⇀", url=SPRT_CHNL)
                 ],[
@@ -1729,7 +1729,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "shortlink_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/kissuhelp")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/FTAdminbot")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -1856,7 +1856,7 @@ async def auto_filter(client, msg, spoll=False):
         if len(message.text) < 100:
             search = message.text
             btn = [[
-                    InlineKeyboardButton(f"Searching  🔍  for {search}", url="t.me/kissuxbots")
+                    InlineKeyboardButton(f"Searching  🔍  for {search}", url="t.me/FT_Channels")
                     ]]
             dlt = await message.reply_sticker('CAACAgIAAxkBAAEO_HVofuHMNAcdUqp8qmGb-5yNzz0UPwACVQADr8ZRGmTn_PAl6RC_NgQ', reply_markup=InlineKeyboardMarkup(btn))
             search = search.lower()
@@ -1888,7 +1888,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
         btn = [[
-                InlineKeyboardButton(f"Searching  🔍  for {search}", url="t.me/kissuxbots")
+                InlineKeyboardButton(f"Searching  🔍  for {search}", url="t.me/FT_Channels")
                 ]]
         dlt = await message.reply_sticker('CAACAgIAAxkBAAEO_HVofuHMNAcdUqp8qmGb-5yNzz0UPwACVQADr8ZRGmTn_PAl6RC_NgQ', reply_markup=InlineKeyboardMarkup(btn))
         settings = await get_settings(message.chat.id)
@@ -2077,7 +2077,7 @@ async def advantage_spell_chok(client, msg):
         button = [[
                    InlineKeyboardButton("🔍 Click To Check Spelling ", url=f"https://www.google.com/search?q={reqst_gle}")
                 ],[
-                    InlineKeyboardButton("📌 Join For New Movies", url=f"https://t.me/kissuxbots")
+                    InlineKeyboardButton("📌 Join For New Movies", url=f"https://t.me/FT_Channels")
                 ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2117,7 +2117,7 @@ async def advantage_spell_chok(client, msg):
         button = [[
                    InlineKeyboardButton("🔍 Click To Check Spelling ", url=f"https://www.google.com/search?q={reqst_gle}")
                 ],[
-                    InlineKeyboardButton("📌 Join For New Movies", url=f"https://t.me/kissuxbots")
+                    InlineKeyboardButton("📌 Join For New Movies", url=f"https://t.me/FT_Channels")
                 ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
