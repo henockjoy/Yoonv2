@@ -21,6 +21,20 @@ import pytz
 from aiohttp import web
 from plugins import web_server
 
+# 🔹 Add your keep-alive URL here
+KEEP_ALIVE_URL = "https://combative-zonda-filmotainment-21dd03cd.koyeb.app/"
+
+async def keep_alive():
+    """Send a request every 111 seconds to keep the bot alive (if required)."""
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                async with session.get(KEEP_ALIVE_URL) as resp:
+                    logging.info(f"Keep-alive request sent. Status: {resp.status}")
+            except Exception as e:
+                logging.error(f"Keep-alive request failed: {e}")
+            await asyncio.sleep(111)
+
 class Bot(Client):
 
     def __init__(self):
@@ -100,7 +114,13 @@ class Bot(Client):
             for message in messages:
                 yield message
                 current += 1
+                
 
-
-app = Bot()
-app.run()
+# 🔹 Auto-restart loop
+while True:
+    try:
+        app = Bot()
+        app.run()
+    except Exception as e:
+        logging.error(f"Bot crashed with error: {e}. Restarting in 10 seconds...")
+        time.sleep(10)
