@@ -44,6 +44,24 @@ BUTTONS2 = {}
 SPELL_CHECK = {}
 ADMIN_USRNM = "xaekks"
 
+@Client.on_message(filters.command("setskip") & (filters.group | filters.private))
+async def setskip_handler(client, message):
+    if len(message.command) < 2:
+        return await message.reply_text(
+            "❌ Usage:\n<code>/setskip [number_of_files_to_skip]</code>",
+            quote=True
+        )
+    try:
+        skip_value = int(message.command[1])
+    except ValueError:
+        return await message.reply_text(
+            "❌ Please enter a valid number.",
+            quote=True
+        )
+    chat_id = message.chat.id
+    await save_group_settings(chat_id, "skip", skip_value)
+    await message.reply_text(f"✅ Skip value set to <b>{skip_value}</b>", quote=True)
+
 @Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
 async def give_filter(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
