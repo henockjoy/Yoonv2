@@ -1851,7 +1851,8 @@ async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
         if message.text and message.text.startswith("/"): return  # ignore commands
-        if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
+        text = message.text or ""   # fallback to empty string if None
+        if re.findall(r"((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", text):
             return
         if len(message.text) < 100:
             search = message.text
