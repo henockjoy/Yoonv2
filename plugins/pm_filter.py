@@ -366,6 +366,11 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     BUTTONS[key] = search
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+    settings = await get_settings(message.chat.id)
+    skip = settings.get("skip", 0)
+    if skip > 0:
+        files = files[skip:]
+        total_results = max(0, total_results - skip)
     if not files:
         await query.answer("🚫 ɴᴏ ғɪʟᴇ ᴡʜᴇʀᴇ ғᴏᴜɴᴅ🚫", show_alert=1)
         return
